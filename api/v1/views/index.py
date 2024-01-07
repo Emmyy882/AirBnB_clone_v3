@@ -4,7 +4,7 @@ Create a route `/status` on the object app_views.
 '''
 
 
-from flask import jsonify
+from flask import Flask, Blueprint, jsonify
 from api.v1.views import app_views
 from models import storage
 
@@ -32,3 +32,6 @@ def get_stats():
         'users': storage.count('User')
     }
     return jsonify(stats)
+
+if __name__ == "__main__":
+    pass
